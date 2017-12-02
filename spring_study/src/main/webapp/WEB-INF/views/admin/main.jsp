@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,7 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>게시판 프로그램</h2>
-	<a href="main.do">메인 페이지</a>
+관리자(admin)페이지 입니다.
 </body>
 </html>

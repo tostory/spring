@@ -49,4 +49,9 @@ public class LoginController {
 		session.invalidate();
 		return "redirect:login.do";
 	}
+
+	@RequestMapping(value = "/main.do")
+	public String main(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+		return "/main";
+	}
 }

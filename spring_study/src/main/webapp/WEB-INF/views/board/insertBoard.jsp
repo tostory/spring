@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,9 +9,8 @@
 </head>
 <body>
 <center>
-<!-- p255 -->
 <h1>글 등록</h1>	
-<a href="/study/logout.do">Log-out</a>
+<a href="<c:url value='/logout.do'/>">Log-out</a>
 <hr>
 
 <form action="insertBoard.do" method="post">

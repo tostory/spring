@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 		UserVO userVO = userDAO.selectUser(username);
 		
 		List<GrantedAuthorityImpl> authorities = new ArrayList<>();
-		authorities.add(new GrantedAuthorityImpl("ROLE_ADMIN"));
+		authorities.add(new GrantedAuthorityImpl(userVO.getRole()));
 		
 		return new User(username, userVO.getPassword(), authorities);
 	}
