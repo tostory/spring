@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserVO userVO = userDAO.selectUser(username);
 		
-		List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>(2);
+		List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>();
 		authList.add(new SimpleGrantedAuthority(userVO.getRole()));
 		
 		return new User(username, userVO.getPassword(), authList);
