@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.spring.study.board.service.BoardService;
 import com.spring.study.board.vo.BoardVO;
 
+/**
+ * °Ô½ÃÆÇ controller
+ *
+ */
 @Controller
 @RequestMapping(value="/board")
 public class BoardController {

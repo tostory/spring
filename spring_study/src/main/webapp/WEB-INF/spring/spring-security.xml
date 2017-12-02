@@ -11,7 +11,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
 	
-	<!-- controller 제외 load -->
+	<!-- business layer load -->
 	<context:component-scan base-package="com.spring.study">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
@@ -56,7 +56,7 @@
     	<constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 	
-	<!-- spring-security -->
+	<!-- spring-security intercept-url -->
 	<sec:http use-expressions="true">
 		<sec:intercept-url pattern="/board/**" access="isAuthenticated()"/>
 		<sec:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
@@ -68,6 +68,8 @@
 		/>
 		<sec:logout/>
 	</sec:http>
+	
+	<!-- security user-service -->
 	<sec:authentication-manager>
 		<sec:authentication-provider user-service-ref="userService"/>
 	</sec:authentication-manager>

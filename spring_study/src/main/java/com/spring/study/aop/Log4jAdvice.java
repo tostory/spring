@@ -12,6 +12,11 @@ import org.springframework.stereotype.Service;
 
 import com.spring.study.user.vo.UserVO;
 
+/**
+ * aop 
+ * business logic class aspect
+ *
+ */
 @Aspect
 @Service("log4jAdvice")
 public class Log4jAdvice {

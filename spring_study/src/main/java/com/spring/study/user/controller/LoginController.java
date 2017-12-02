@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.spring.study.user.service.UserService;
 import com.spring.study.user.vo.UserVO;
 
+/**
+ * ·Î±×ÀÎ controller
+ *
+ */
 @Controller
 public class LoginController {
 	
