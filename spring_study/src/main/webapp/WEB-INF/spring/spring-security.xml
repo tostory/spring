@@ -16,9 +16,6 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 	
-	<!-- aop -->
-	<aop:aspectj-autoproxy />
-	
 	<!-- jdbc dataSource -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
@@ -26,6 +23,9 @@
         <property name="username" value="spring"/>
         <property name="password" value="tiger"/>
     </bean>
+    
+    <!-- aop -->
+	<aop:aspectj-autoproxy />
 	
 	<!-- SqlSessionFactoryBean -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

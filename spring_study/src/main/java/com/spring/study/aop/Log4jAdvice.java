@@ -8,18 +8,20 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Service;
 
 import com.spring.study.user.vo.UserVO;
 
 @Aspect
+@Service("log4jAdvice")
 public class Log4jAdvice {
 
 	// Aspect = 포인트컷(=핵심관심) + 어드바이스(=횡단관심)
-	@Pointcut("execution(* com.spring.study..*Impl.*(..))")
+	@Pointcut("execution(* com.spring.study..*ServiceImpl.*(..))")
 	public void allPointcut(){}
 	
 	//@Before("allPointcut()") // 어드바이스
-	@Before("execution(* com.spring.study..*Impl.*(..))")
+	@Before("execution(* com.spring.study..*ServiceImpl.*(..))")
 	public void beforPrintLog(JoinPoint jp){
 		System.out.println("[AOP 로그] befor : 비즈니스 로직 수행 전 동작 - " + jp.getSignature().getName());
 	}
