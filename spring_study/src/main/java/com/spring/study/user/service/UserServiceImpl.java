@@ -1,10 +1,13 @@
 package com.spring.study.user.service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,10 +26,10 @@ public class UserServiceImpl implements UserService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		UserVO userVO = userDAO.selectUser(username);
 		
-		List<GrantedAuthorityImpl> authorities = new ArrayList<>();
-		authorities.add(new GrantedAuthorityImpl(userVO.getRole()));
+		List<GrantedAuthority> authList = new ArrayList<GrantedAuthority>(2);
+		authList.add(new SimpleGrantedAuthority(userVO.getRole()));
 		
-		return new User(username, userVO.getPassword(), authorities);
+		return new User(username, userVO.getPassword(), authList);
 	}
 	
 	@Override
